@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: hsl(25, 100%, 94%);
+  --main-p-color: hsl(219, 9%, 45%);
+  --orange-color: hsl(26, 100%, 55%);
+  --dark-blue-color: hsl(220, 13%, 13%);
+}
+
+body {
+  font-size: 16px;
+  background-color: var(--main-bg-color);
+  height: 100%;
+  font-family: "Kumbh Sans", sans-serif;
+  padding: 1.5rem 6rem;
+  font-weight: 400px;
+}
+
+header {
+  margin-bottom: 5rem;
+}
+
+p,
+a {
+  color: var(--main-p-color);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--dark-blue-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.7rem;
+}
+
+.left-nav,
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.right-nav *:hover {
+  cursor: pointer;
+}
+
+.nav-links {
+  margin-left: 2rem;
+}
+
+.nav-links ul {
+  display: flex;
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0 1rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  padding-bottom: 2.6rem;
+  border-bottom: 3px solid var(--orange-color);
+}
+
+.avatar-box {
+  width: 3rem;
+  margin-left: 5rem;
+}
+
+.avatar-box img {
+  width: 100%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 80px;
+}
+
+.large-img-box {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.large-img-box img {
+  width: 90%;
+}
+
+.left-section {
+  text-align: center;
+}
+
+.left-section img {
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.img-thumbnails {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.img-thumbnails img {
+  width: 100px;
+  margin: 0.5rem 0.1rem;
+}
+
+.img-thumbnails img:hover {
+  border: 3px solid var(--orange-color);
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-section h4 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--orange-color);
+  margin-bottom: 1.5rem;
+}
+
+.price-box {
+  margin-top: 2.5rem;
+}
+
+.price-box p {
+  text-decoration: line-through;
+  margin: 0.5rem 0;
+}
+
+.discount {
+  display: flex;
+}
+
+.discount button {
+  margin-left: 1rem;
+  border: none;
+  background-color: hsl(25, 85%, 82%);
+  padding: 0 0.4rem 0;
+  border-radius: 0.4rem;
+}
+
+.discount button h3 {
+  color: var(--orange-color);
+}
+
+.buttons-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-box div {
+  display: flex;
+  border-radius: 0.7rem;
+  padding: 1rem;
+}
+
+.inc-dec-btn {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(223, 64%, 98%);
+  margin: 0 1rem 0 0;
+}
+
+.addToCartBtn {
+  width: 60%;
+  margin: 0 0 0 1rem;
+  background-color: var(--orange-color);
+  display: flex;
+  justify-content: center;
+}
+
+.addToCartBtn * {
+  margin: 0 0.4rem;
+  color: #fff;
+}
+
+.attribution {
+  text-align: center;
+  margin: 2.5rem 0 0;
+}
