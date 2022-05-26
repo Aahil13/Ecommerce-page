@@ -11,6 +11,7 @@
     />
     <title>Frontend Mentor | E-commerce product page</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="/script.js"></script>
   </head>
   <body>
     <header>
@@ -31,6 +32,7 @@
         </div>
         <div class="right-nav">
           <div class="cart-box">
+            <div class="numberOfItemsAdded"><p>0</p></div>
             <img src="images/icon-cart.svg" alt="cart-img" />
           </div>
           <div class="avatar-box">
@@ -39,6 +41,39 @@
         </div>
       </nav>
       <hr />
+      <div class="cart display">
+        <h3>Cart</h3>
+        <div class="cartText">
+          <div class="txt">
+            <div class="cartItems">
+              <div class="cartItemImg">
+                <img
+                  src="images/image-product-1-thumbnail.jpg"
+                  alt="img-thumbnails"
+                />
+              </div>
+              <div class="cartItemPrice">
+                <div class="cartItemTag">
+                  <p>Fall Limited Edition Sneakers</p>
+                  <p>
+                    $125.00 × 3<strong style="margin-: 0.5rem"> $375.00</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="trashIcon">
+                <img src="images/icon-delete.svg" alt="trashIcon" />
+              </div>
+            </div>
+          </div>
+          <div class="btn">
+            <div class="buttons cartBtn">
+              <img src="images/icon-cart-white.svg" alt="cart" />
+              <p>checkout</p>
+            </div>
+          </div>
+        </div>
+        <p>Your Cart Is Empty</p>
+      </div>
     </header>
     <main>
       <section class="left-section">
@@ -82,11 +117,11 @@
 
         <div class="buttons-box">
           <div class="inc-dec-btn">
-            <img src="images/icon-minus.svg" alt="minus" />
-            <p>0</p>
-            <img src="images/icon-plus.svg" alt="plus" />
+            <img class="minus" src="images/icon-minus.svg" alt="minus" />
+            <p class="numberOfItems">0</p>
+            <img class="plus" src="images/icon-plus.svg" alt="plus" />
           </div>
-          <div class="addToCartBtn">
+          <div class="buttons addToCartBtn">
             <img src="images/icon-cart-white.svg" alt="cart" />
             <p>Add To Cart</p>
           </div>
