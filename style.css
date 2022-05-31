@@ -116,13 +116,13 @@ main {
   padding: 20px;
 }
 
-.cartText{
+.cartText {
   height: 135px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  padding:.5rem;
+  padding: 0.5rem;
   font-size: 14px;
 }
 
@@ -133,15 +133,15 @@ main {
   grid-column-gap: 0.3rem;
 }
 
-.btn{
+.btn {
   width: 100%;
 }
 
-.buttons.cartBtn{
+.buttons.cartBtn {
   width: 100%;
   margin-left: 0;
-  border-radius: .5rem;
-  padding: .8rem 0;
+  border-radius: 0.5rem;
+  padding: 0.8rem 0;
 }
 
 .trashIcon {
@@ -156,6 +156,10 @@ main {
 .cartItems img {
   width: 100%;
   vertical-align: sub;
+}
+
+.trashIcon {
+  cursor: pointer;
 }
 
 .cartItemTag {
@@ -305,4 +309,28 @@ main {
 .attribution {
   text-align: center;
   margin: 2.5rem 0 0;
+}
+
+@media (max-width: 1030px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+  main {
+    grid-gap: 20px;
+  }
+  .avatar-box {
+    width: 3rem;
+    margin-left: 2rem;
+  }
+  .img-thumbnails img {
+    width: 70px;
+  }
+}
+
+@media (max-width: 748px) {
+  main {
+    grid-template-columns: repeat(1, 1fr);
+    width: 70%;
+    margin: 1rem auto;
+  }
 }
