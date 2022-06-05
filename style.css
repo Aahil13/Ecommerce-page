@@ -20,6 +20,7 @@ body {
   font-family: "Kumbh Sans", sans-serif;
   padding: 1.5rem 6rem;
   font-weight: 400px;
+  position: relative;
 }
 
 header {
@@ -294,7 +295,7 @@ main {
 .numberOfItemsAdded {
   background-color: var(--orange-color);
   text-align: center;
-  padding: 1rem;
+  padding: 0.8rem;
   clip-path: ellipse(35% 16% at 53% 50%);
   position: absolute;
   bottom: 0;
@@ -303,7 +304,7 @@ main {
 
 .numberOfItemsAdded p {
   color: #fff !important;
-  font-size: 12px;
+  font-size: 2px;
 }
 
 .attribution {
@@ -333,4 +334,118 @@ main {
     width: 70%;
     margin: 1rem auto;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: -50px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* SLIDER */
+.slider {
+  max-width: 100rem;
+  height: 50rem;
+  margin: 0 auto;
+  position: relative;
+
+  /* IN THE END */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+
+.slide > img {
+  /* Only for images that have different size than slide */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  border: none;
+  background: #fff;
+  clip-path: circle();
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.slider__btn--left {
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 20%;
+  transform: translate(50%, -50%);
+}
+
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dots__dot {
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7);
+}
+
+/* TESTIMONIALS */
+.testimonial {
+  width: 65%;
+  display: flex;
+  position: relative;
+}
+
+.testimonial img {
+  width: 70%;
+  margin: 0 auto;
 }
