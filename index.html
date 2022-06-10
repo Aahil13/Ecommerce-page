@@ -18,10 +18,16 @@
       <nav>
         <div class="left-nav">
           <div class="logo-box">
-            <img src="images/logo.svg" alt="logo" />
+            <div class="burger">
+              <img src="images/icon-menu.svg" alt="menu" />
+            </div>
+            <img class="logo" src="images/logo.svg" alt="logo" />
           </div>
           <div class="nav-links">
             <ul>
+              <div class="nav--close">
+                <img src="images/icon-close.svg" alt="close" />
+              </div>
               <li><a href="#">Collections</a></li>
               <li><a href="#">Men</a></li>
               <li><a href="#">Women</a></li>
@@ -112,7 +118,7 @@
             <h2>$125.00</h2>
             <button><h3>50%</h3></button>
           </div>
-          <p>$250.00</p>
+          <div class="slashed-price"><p>$250.00</p></div>
         </div>
 
         <div class="buttons-box">
@@ -130,10 +136,10 @@
     </main>
     <section class="modal hidden">
       <div class="slider">
+        <div class="closeModalBtn">
+          <img src="images/icon-close.svg" alt="close" />
+        </div>
         <div class="slide">
-          <div class="closeModalBtn">
-        <img src="images/icon-close.svg" alt="close" />
-      </div>
           <div class="testimonial">
             <img src="images/image-product-1.jpg" alt="shoe-img" />
           </div>
@@ -157,8 +163,12 @@
           </div>
         </div>
 
-        <button class="slider__btn slider__btn--left"><img src="images/icon-previous.svg"></button>
-        <button class="slider__btn slider__btn--right"><img src="images/icon-next.svg"></button>
+        <button class="slider__btn slider__btn--left">
+          <img src="images/icon-previous.svg" />
+        </button>
+        <button class="slider__btn slider__btn--right">
+          <img src="images/icon-next.svg" />
+        </button>
         <div class="dots">
           <div class="img-thumbnails">
             <img

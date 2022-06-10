@@ -12,7 +12,12 @@ const imgThumbnails = document.querySelector(".img-thumbnails");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const closeModalBtn = document.querySelector(".closeModalBtn");
-const sliderEl = document.querySelector('.slider')
+const sliderEl = document.querySelector(".slider");
+const sliderBtnRight = document.querySelector(".slider__btn--right");
+const sliderBtnleft = document.querySelector(".slider__btn--left");
+const burger = document.querySelector(".burger");
+const navLinks = document.querySelector(".nav-links");
+const navCloseBtn = document.querySelector(".nav--close");
 
 //state Values
 let initialNumber = 0;
@@ -91,19 +96,22 @@ imgThumbnails.addEventListener("click", (e) => {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
   document.body.style.overflow = "hidden";
-  changeCloseButtonColor("mouseover", "images/icon-close-orange.svg");
-  changeCloseButtonColor("mouseout", "images/icon-close.svg");
 });
+
+changeCloseButtonColor("mouseover", "images/icon-close-orange.svg");
+changeCloseButtonColor("mouseout", "images/icon-close.svg");
 
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+  navLinks.classList.remove("toggleNav");
+  navLinks.classList.remove("mobileNav");
   document.body.style.overflow = "scroll";
 };
 
 overlay.addEventListener("click", closeModal);
-closeModalBtn.addEventListener('click', closeModal)
-sliderEl.addEventListener('click', closeModal)
+closeModalBtn.addEventListener("click", closeModal);
+navCloseBtn.addEventListener('click', closeModal)
 
 //functionalities for the add to cart button
 addToCartBtn.addEventListener("click", () => {
@@ -111,7 +119,8 @@ addToCartBtn.addEventListener("click", () => {
   numberOfItemsAdded.style.display = "block";
   numberOfItemsAdded.style.color = "#fff";
   numberOfItemsAdded.innerHTML = initialNumber;
-  numberOfItems.innerHTML = 0;
+  initialNumber = 0
+  numberOfItems.innerHTML = initialNumber;
 
   if (initialNumber === 0) {
     cartText.innerHTML = "";
@@ -132,10 +141,10 @@ addToCartBtn.addEventListener("click", () => {
 ///////////////////////////////////////
 // Slider
 const slider = function () {
-  const slides = document.querySelectorAll('.slide');
-  const btnLeft = document.querySelector('.slider__btn--left');
-  const btnRight = document.querySelector('.slider__btn--right');
-  const dotContainer = document.querySelector('.dots');
+  const slides = document.querySelectorAll(".slide");
+  const btnLeft = document.querySelector(".slider__btn--left");
+  const btnRight = document.querySelector(".slider__btn--right");
+  const dotContainer = document.querySelector(".dots");
 
   let curSlide = 0;
   const maxSlide = slides.length;
@@ -143,12 +152,12 @@ const slider = function () {
   // Functions
   const activateDot = function (slide) {
     document
-      .querySelectorAll('.dots__dot')
-      .forEach(dot => dot.classList.remove('dots__dot--active'));
+      .querySelectorAll(".dots__dot")
+      .forEach((dot) => dot.classList.remove("dots__dot--active"));
 
     document
       .querySelector(`.dots__dot[data-slide="${slide}"]`)
-      .classList.add('dots__dot--active');
+      .classList.add("dots__dot--active");
   };
 
   const goToSlide = function (slide) {
@@ -187,16 +196,16 @@ const slider = function () {
   init();
 
   // Event handlers
-  btnRight.addEventListener('click', nextSlide);
-  btnLeft.addEventListener('click', prevSlide);
+  btnRight.addEventListener("click", nextSlide);
+  btnLeft.addEventListener("click", prevSlide);
 
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') prevSlide();
-    e.key === 'ArrowRight' && nextSlide();
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") prevSlide();
+    e.key === "ArrowRight" && nextSlide();
   });
 
-  dotContainer.addEventListener('click', function (e) {
-    if (e.target.classList.contains('dots__dot')) {
+  dotContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("dots__dot")) {
       const { slide } = e.target.dataset;
       goToSlide(slide);
       activateDot(slide);
@@ -206,3 +215,13 @@ const slider = function () {
 slider();
 
 ///////////////////////////////////////
+
+//functionalities for the menu
+
+burger.addEventListener("click", () => {
+  navLinks.style.transition = 'all 2s'
+  navLinks.classList.add("mobileNav");
+  overlay.classList.remove("hidden");
+  navLinks.classList.toggle("toggleNav");
+  document.body.style.overflow = "hidden";
+});
