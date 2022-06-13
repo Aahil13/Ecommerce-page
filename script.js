@@ -1,12 +1,12 @@
 "use strict";
 
-const numberOfItems = document.querySelector(".numberOfItems");
-const decreaseItems = document.querySelector(".minus");
-const increaseItems = document.querySelector(".plus");
+const counter = document.querySelector(".counter");
+const decreseCounter = document.querySelector(".minus");
+const increaseCounter = document.querySelector(".plus");
 const rightNav = document.querySelector(".right-nav");
 const cart = document.querySelector(".cart");
 const addToCartBtn = document.querySelector(".addToCartBtn");
-const numberOfItemsAdded = document.querySelector(".numberOfItemsAdded");
+const itemsAdded = document.querySelector(".items-added");
 const cartText = document.querySelector(".cartText");
 const imgThumbnails = document.querySelector(".img-thumbnails");
 const modal = document.querySelector(".modal");
@@ -17,21 +17,21 @@ const sliderBtnRight = document.querySelector(".slider__btn--right");
 const sliderBtnleft = document.querySelector(".slider__btn--left");
 const burger = document.querySelector(".burger");
 const navLinks = document.querySelector(".nav-links");
-const navCloseBtn = document.querySelector(".nav--close");
+const navCloseBtn = document.querySelector(".nav--close__btn");
 
 //state Values
 let initialNumber = 0;
 
 //for increasing and decreasing the price counter
-increaseItems.addEventListener("click", () => {
+increaseCounter.addEventListener("click", () => {
   if (initialNumber < 10) initialNumber++;
-  numberOfItems.innerHTML = initialNumber;
+  counter.innerHTML = initialNumber;
 });
 
-decreaseItems.addEventListener("click", () => {
+decreseCounter.addEventListener("click", () => {
   initialNumber--;
   if (initialNumber <= 0) initialNumber = 0;
-  numberOfItems.innerHTML = initialNumber;
+  counter.innerHTML = initialNumber;
 });
 
 const cartItem = function (initialNumber) {
@@ -111,16 +111,15 @@ const closeModal = function () {
 
 overlay.addEventListener("click", closeModal);
 closeModalBtn.addEventListener("click", closeModal);
-navCloseBtn.addEventListener('click', closeModal)
+navCloseBtn.addEventListener("click", closeModal);
 
 //functionalities for the add to cart button
 addToCartBtn.addEventListener("click", () => {
   //takes the current number of items and adds it to the cart icon
-  numberOfItemsAdded.style.display = "block";
-  numberOfItemsAdded.style.color = "#fff";
-  numberOfItemsAdded.innerHTML = initialNumber;
-  initialNumber = 0
-  numberOfItems.innerHTML = initialNumber;
+  cart.classList.remove("display");
+  itemsAdded.style.display = "block";
+  itemsAdded.style.color = "#fff";
+  itemsAdded.innerHTML = initialNumber;
 
   if (initialNumber === 0) {
     cartText.innerHTML = "";
@@ -132,7 +131,7 @@ addToCartBtn.addEventListener("click", () => {
 
   const trashIcon = document.querySelector(".trashIcon");
   trashIcon.addEventListener("click", () => {
-    numberOfItemsAdded.style.display = "none";
+    itemsAdded.style.display = "none";
     cartText.innerHTML = "";
     cartText.insertAdjacentHTML("afterbegin", defaultText);
   });
@@ -219,7 +218,7 @@ slider();
 //functionalities for the menu
 
 burger.addEventListener("click", () => {
-  navLinks.style.transition = 'all 2s'
+  navLinks.style.transition = "all 2s";
   navLinks.classList.add("mobileNav");
   overlay.classList.remove("hidden");
   navLinks.classList.toggle("toggleNav");
