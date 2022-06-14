@@ -69,6 +69,8 @@ const cartItem = function (initialNumber) {
 };
 
 const defaultText = `<p>Your page is empty</p>`;
+cartText.innerHTML = "";
+cartText.insertAdjacentHTML("afterbegin", defaultText);
 
 //toggling the cart
 const showCart = function () {
@@ -76,7 +78,7 @@ const showCart = function () {
     if (e.target.tagName !== "IMG") return;
     cart.classList.toggle("display");
 
-    if (initialNumber === 0) {
+    if (itemsAdded.innerHTML <= 0) {
       cartText.innerHTML = "";
       cartText.insertAdjacentHTML("afterbegin", defaultText);
     }
@@ -116,10 +118,10 @@ navCloseBtn.addEventListener("click", closeModal);
 //functionalities for the add to cart button
 addToCartBtn.addEventListener("click", () => {
   //takes the current number of items and adds it to the cart icon
-  cart.classList.remove("display");
   itemsAdded.style.display = "block";
   itemsAdded.style.color = "#fff";
   itemsAdded.innerHTML = initialNumber;
+  counter.innerHTML = 0;
 
   if (initialNumber === 0) {
     cartText.innerHTML = "";
@@ -135,6 +137,7 @@ addToCartBtn.addEventListener("click", () => {
     cartText.innerHTML = "";
     cartText.insertAdjacentHTML("afterbegin", defaultText);
   });
+  initialNumber = 0;
 });
 
 ///////////////////////////////////////
